@@ -11,9 +11,17 @@
 
 char buffer[256];
 
-START_TEST(int2roman_test)
+START_TEST(add_roman_test)
 {
 #line 7
+	ck_assert_str_eq ((add_roman ("I", "I", buffer),  buffer), "II");
+
+}
+END_TEST
+
+START_TEST(int2roman_test)
+{
+#line 10
 	ck_assert_str_eq ((int2roman (1, buffer),  buffer), "I");
 	ck_assert_str_eq ((int2roman (2, buffer),  buffer), "II");
 	ck_assert_str_eq ((int2roman (3, buffer),  buffer), "III");
@@ -94,7 +102,7 @@ END_TEST
 
 START_TEST(roman2int_test)
 {
-#line 83
+#line 86
 	ck_assert_int_eq (roman2int ("I"), 1);
 	ck_assert_int_eq (roman2int ("II"), 2);
 	ck_assert_int_eq (roman2int ("III"), 3);
@@ -165,6 +173,7 @@ int main(void)
     int nf;
 
     suite_add_tcase(s1, tc1_1);
+    tcase_add_test(tc1_1, add_roman_test);
     tcase_add_test(tc1_1, int2roman_test);
     tcase_add_test(tc1_1, roman2int_test);
 

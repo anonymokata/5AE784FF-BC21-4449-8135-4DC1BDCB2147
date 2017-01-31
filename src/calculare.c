@@ -3,6 +3,13 @@
 
 #define INT2ROMANDIGIT(value,digit,input,output,max) while (input >= value) { strncat (output, digit,max); input -= value; }
 
+int add_roman (char *input1, char *input2, char *output)
+{
+	int2roman (roman2int(input1) + roman2int(input2), output);
+  return 0;
+}
+
+
 /* 
   int2roman converts the value passed as 'input' to Roman Numeral
   and places the result int the character buffer given by 'output'

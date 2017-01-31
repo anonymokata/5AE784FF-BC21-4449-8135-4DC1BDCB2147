@@ -3,6 +3,9 @@
 
 char buffer[256];
 
+# test add_roman_test
+	ck_assert_str_eq ((add_roman ("I", "I", buffer),  buffer), "II");
+
 #test int2roman_test
 	ck_assert_str_eq ((int2roman (1, buffer),  buffer), "I");
 	ck_assert_str_eq ((int2roman (2, buffer),  buffer), "II");

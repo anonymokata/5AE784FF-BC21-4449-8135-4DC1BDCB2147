@@ -7,6 +7,8 @@
 
 int int2roman (int input, char *output);
 int roman2int (char *input);
+int add_roman (char *in1, char *in2, char *output);
+int sub_roman (char *in1, char *in2, char *output);
 
 
 #endif
