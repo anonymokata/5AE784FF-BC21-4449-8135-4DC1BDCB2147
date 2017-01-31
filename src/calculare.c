@@ -9,6 +9,12 @@ int add_roman (char *input1, char *input2, char *output)
   return 0;
 }
 
+int sub_roman (char *input1, char *input2, char *output)
+{
+	int2roman (roman2int(input1) - roman2int(input2), output);
+  return 0;
+}
+
 
 /* 
   int2roman converts the value passed as 'input' to Roman Numeral
