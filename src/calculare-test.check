@@ -5,6 +5,24 @@ char buffer[256];
 
 # test add_roman_test
 	ck_assert_str_eq ((add_roman ("I", "I", buffer),  buffer), "II");
+	ck_assert_str_eq ((add_roman ("I", "II", buffer),  buffer), "III");
+	ck_assert_str_eq ((add_roman ("II", "I", buffer),  buffer), "III");
+	ck_assert_str_eq ((add_roman ("II", "II", buffer),  buffer), "IV");
+
+	ck_assert_str_eq ((add_roman ("V", "V", buffer),  buffer), "X");
+	ck_assert_str_eq ((add_roman ("L", "L", buffer),  buffer), "C");
+	ck_assert_str_eq ((add_roman ("D", "D", buffer),  buffer), "M");
+
+	ck_assert_str_eq ((add_roman ("D", "L", buffer),  buffer), "DL");
+	ck_assert_str_eq ((add_roman ("L", "D", buffer),  buffer), "DL");
+
+	ck_assert_str_eq ((add_roman ("II", "IV", buffer),  buffer), "VI");
+	ck_assert_str_eq ((add_roman ("XX", "XL", buffer),  buffer), "LX");
+	ck_assert_str_eq ((add_roman ("CC", "CD", buffer),  buffer), "DC");
+
+	ck_assert_str_eq ((add_roman ("MCCCLXIII", "DCLXXXIII", buffer),  buffer), "MMXLVI");
+
+	ck_assert_str_eq ((add_roman ("MMCXII", "MMMCDXXX", buffer), buffer), "MMMMMDXLII");
 
 #test int2roman_test
 	ck_assert_str_eq ((int2roman (1, buffer),  buffer), "I");

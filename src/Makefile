@@ -9,6 +9,7 @@ clean:
 
 calculare-test: calculare.o calculare-test.o
 	gcc -o calculare-test calculare.o calculare-test.o $(LIBS)
+	./calculare-test
 
 calculare.o: calculare.c calculare.h
 	gcc $(CFLAGS) -c calculare.c
