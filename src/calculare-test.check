@@ -4,9 +4,12 @@
 char buffer[256];
 
 #test int2roman_test
-	fail_unless (strcmp ((int2roman (1, buffer), buffer), "I") == 0);
-	fail_unless (strcmp ((int2roman (2, buffer), buffer), "II") == 0);
-	fail_unless (strcmp ((int2roman (3, buffer), buffer), "III") == 0);
-	fail_unless (strcmp ((int2roman (4, buffer), buffer), "IV") == 0);
-	fail_unless (strcmp ((int2roman (5, buffer), buffer), "V") == 0);
+	ck_assert_str_eq ((int2roman (3, buffer), buffer), "III");
+	ck_assert_str_eq ((int2roman (1, buffer), buffer), "I");
+	ck_assert_str_eq ((int2roman (2, buffer), buffer), "II");
+	ck_assert_str_eq ((int2roman (4, buffer), buffer), "IV");
+	ck_assert_str_eq ((int2roman (400, buffer), buffer), "CD");
+	ck_assert_str_eq ((int2roman (40, buffer), buffer), "XL");
+	ck_assert_str_eq ((int2roman (5, buffer), buffer), "V");
+
 
