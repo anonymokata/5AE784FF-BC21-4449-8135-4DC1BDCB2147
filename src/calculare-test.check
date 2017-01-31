@@ -77,3 +77,11 @@ char buffer[256];
 	ck_assert_str_eq ((int2roman (1984, buffer), buffer), "MCMLXXXIV");
 	ck_assert_str_eq ((int2roman (1999, buffer), buffer), "MCMXCIX");
   ck_assert_str_eq ((int2roman (2001, buffer), buffer), "MMI");
+
+
+#test roman2int_test
+	ck_assert_int_eq (roman2int ("I"), 1);
+	ck_assert_int_eq (roman2int ("II"), 2);
+	ck_assert_int_eq (roman2int ("III"), 3);
+	ck_assert_int_eq (roman2int ("IV"), 4);
+	ck_assert_int_eq (roman2int ("V"), 5);

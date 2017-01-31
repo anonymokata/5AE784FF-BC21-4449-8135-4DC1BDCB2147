@@ -23,3 +23,34 @@ int int2roman (int input, char *output)
 
 	return 0;
 }
+
+int roman2int (char *input)
+{
+	int i = 0;
+  int output = 0;
+	int value = 0;
+	int last_value = 10000;
+
+  while ((i<MAX_STRING)&&(input[i] != '\0'))
+	{
+		switch (input[i])
+		{
+			case 'M': value = 1000; break;
+			case 'D': value = 500; break;
+			case 'C': value = 100; break;
+			case 'L': value = 50; break;
+			case 'X': value = 10; break;
+			case 'V': value = 5; break;
+			case 'I': value = 1; break;
+		  default: return -1; break;
+		}
+		output += value;
+		if (value > last_value)
+		{
+		  output -= 2 * last_value;
+		}
+		i++;
+		last_value = value;
+  }
+  return output;
+}

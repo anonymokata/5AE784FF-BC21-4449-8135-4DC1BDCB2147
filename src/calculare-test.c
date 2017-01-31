@@ -87,6 +87,19 @@ START_TEST(int2roman_test)
 	ck_assert_str_eq ((int2roman (1984, buffer), buffer), "MCMLXXXIV");
 	ck_assert_str_eq ((int2roman (1999, buffer), buffer), "MCMXCIX");
   ck_assert_str_eq ((int2roman (2001, buffer), buffer), "MMI");
+
+
+}
+END_TEST
+
+START_TEST(roman2int_test)
+{
+#line 83
+	ck_assert_int_eq (roman2int ("I"), 1);
+	ck_assert_int_eq (roman2int ("II"), 2);
+	ck_assert_int_eq (roman2int ("III"), 3);
+	ck_assert_int_eq (roman2int ("IV"), 4);
+	ck_assert_int_eq (roman2int ("V"), 5);
 }
 END_TEST
 
@@ -99,6 +112,7 @@ int main(void)
 
     suite_add_tcase(s1, tc1_1);
     tcase_add_test(tc1_1, int2roman_test);
+    tcase_add_test(tc1_1, roman2int_test);
 
     srunner_run_all(sr, CK_ENV);
     nf = srunner_ntests_failed(sr);

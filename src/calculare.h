@@ -6,6 +6,7 @@
 #define MAX_STRING 256
 
 int int2roman (int input, char *output);
+int roman2int (char *input);
 
 
 #endif
