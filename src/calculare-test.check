@@ -4,12 +4,76 @@
 char buffer[256];
 
 #test int2roman_test
-	ck_assert_str_eq ((int2roman (3, buffer), buffer), "III");
-	ck_assert_str_eq ((int2roman (1, buffer), buffer), "I");
-	ck_assert_str_eq ((int2roman (2, buffer), buffer), "II");
-	ck_assert_str_eq ((int2roman (4, buffer), buffer), "IV");
-	ck_assert_str_eq ((int2roman (400, buffer), buffer), "CD");
+	ck_assert_str_eq ((int2roman (1, buffer),  buffer), "I");
+	ck_assert_str_eq ((int2roman (2, buffer),  buffer), "II");
+	ck_assert_str_eq ((int2roman (3, buffer),  buffer), "III");
+	ck_assert_str_eq ((int2roman (4, buffer),  buffer), "IV");
+	ck_assert_str_eq ((int2roman (5, buffer),  buffer), "V");
+	ck_assert_str_eq ((int2roman (6, buffer),  buffer), "VI");
+	ck_assert_str_eq ((int2roman (7, buffer),  buffer), "VII");
+	ck_assert_str_eq ((int2roman (8, buffer),  buffer), "VIII");
+	ck_assert_str_eq ((int2roman (9, buffer),  buffer), "IX");
+	ck_assert_str_eq ((int2roman (10, buffer), buffer), "X");
+	ck_assert_str_eq ((int2roman (11, buffer), buffer), "XI");
+	ck_assert_str_eq ((int2roman (12, buffer), buffer), "XII");
+	ck_assert_str_eq ((int2roman (13, buffer), buffer), "XIII");
+	ck_assert_str_eq ((int2roman (14, buffer), buffer), "XIV");
+	ck_assert_str_eq ((int2roman (15, buffer), buffer), "XV");
+	ck_assert_str_eq ((int2roman (16, buffer), buffer), "XVI");
+	ck_assert_str_eq ((int2roman (17, buffer), buffer), "XVII");
+	ck_assert_str_eq ((int2roman (18, buffer), buffer), "XVIII");
+	ck_assert_str_eq ((int2roman (19, buffer), buffer), "XIX");
+	ck_assert_str_eq ((int2roman (20, buffer), buffer), "XX");
+	ck_assert_str_eq ((int2roman (21, buffer), buffer), "XXI");
+	ck_assert_str_eq ((int2roman (22, buffer), buffer), "XXII");
+	ck_assert_str_eq ((int2roman (23, buffer), buffer), "XXIII");
+	ck_assert_str_eq ((int2roman (24, buffer), buffer), "XXIV");
+	ck_assert_str_eq ((int2roman (25, buffer), buffer), "XXV");
+
+	ck_assert_str_eq ((int2roman (30, buffer), buffer), "XXX");
+	ck_assert_str_eq ((int2roman (34, buffer), buffer), "XXXIV");
+	ck_assert_str_eq ((int2roman (39, buffer), buffer), "XXXIX");
+
 	ck_assert_str_eq ((int2roman (40, buffer), buffer), "XL");
-	ck_assert_str_eq ((int2roman (5, buffer), buffer), "V");
+	ck_assert_str_eq ((int2roman (44, buffer), buffer), "XLIV");
+	ck_assert_str_eq ((int2roman (49, buffer), buffer), "XLIX");
 
+	ck_assert_str_eq ((int2roman (50, buffer), buffer), "L");
+	ck_assert_str_eq ((int2roman (54, buffer), buffer), "LIV");
+	ck_assert_str_eq ((int2roman (59, buffer), buffer), "LIX");
 
+	ck_assert_str_eq ((int2roman (60, buffer), buffer), "LX");
+	ck_assert_str_eq ((int2roman (64, buffer), buffer), "LXIV");
+	ck_assert_str_eq ((int2roman (69, buffer), buffer), "LXIX");
+
+	ck_assert_str_eq ((int2roman (70, buffer), buffer), "LXX");
+	ck_assert_str_eq ((int2roman (74, buffer), buffer), "LXXIV");
+	ck_assert_str_eq ((int2roman (79, buffer), buffer), "LXXIX");
+
+	ck_assert_str_eq ((int2roman (80, buffer), buffer), "LXXX");
+	ck_assert_str_eq ((int2roman (88, buffer), buffer), "LXXXVIII");
+	ck_assert_str_eq ((int2roman (89, buffer), buffer), "LXXXIX");
+
+	ck_assert_str_eq ((int2roman (90, buffer), buffer), "XC");
+	ck_assert_str_eq ((int2roman (94, buffer), buffer), "XCIV");
+	ck_assert_str_eq ((int2roman (99, buffer), buffer), "XCIX");
+
+	ck_assert_str_eq ((int2roman (144, buffer), buffer), "CXLIV");
+	ck_assert_str_eq ((int2roman (244, buffer), buffer), "CCXLIV");
+	ck_assert_str_eq ((int2roman (344, buffer), buffer), "CCCXLIV");
+	ck_assert_str_eq ((int2roman (444, buffer), buffer), "CDXLIV");
+	ck_assert_str_eq ((int2roman (544, buffer), buffer), "DXLIV");
+	ck_assert_str_eq ((int2roman (644, buffer), buffer), "DCXLIV");
+	ck_assert_str_eq ((int2roman (744, buffer), buffer), "DCCXLIV");
+	ck_assert_str_eq ((int2roman (844, buffer), buffer), "DCCCXLIV");
+	ck_assert_str_eq ((int2roman (944, buffer), buffer), "CMXLIV");
+
+	ck_assert_str_eq ((int2roman (1044, buffer), buffer), "MXLIV");
+	ck_assert_str_eq ((int2roman (2044, buffer), buffer), "MMXLIV");
+	ck_assert_str_eq ((int2roman (3044, buffer), buffer), "MMMXLIV");
+	ck_assert_str_eq ((int2roman (4044, buffer), buffer), "MMMMXLIV");
+	ck_assert_str_eq ((int2roman (5044, buffer), buffer), "MMMMMXLIV");
+
+	ck_assert_str_eq ((int2roman (1984, buffer), buffer), "MCMLXXXIV");
+	ck_assert_str_eq ((int2roman (1999, buffer), buffer), "MCMXCIX");
+  ck_assert_str_eq ((int2roman (2001, buffer), buffer), "MMI");

@@ -12,6 +12,12 @@ int int2roman (int input, char *output)
 		input -= 1000;
 	}
 
+	while (input >= 900)
+	{
+		strncat (output, "CM", MAX_STRING);
+		input -= 900;
+	}
+
 	while (input >= 500)
 	{
 		strncat (output, "D", MAX_STRING);
@@ -52,6 +58,12 @@ int int2roman (int input, char *output)
 	{
 		strncat (output, "X", MAX_STRING);
 		input -= 10;
+	}
+
+	while (input >= 9)
+	{
+		strncat (output, "IX", MAX_STRING);
+		input -= 9;
 	}
 
 	while (input >= 5) 
