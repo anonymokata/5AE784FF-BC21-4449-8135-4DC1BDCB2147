@@ -6,13 +6,13 @@
 int add_roman (char *input1, char *input2, char *output)
 {
 	int2roman (roman2int(input1) + roman2int(input2), output);
-  return 0;
+	return 0;
 }
 
 int sub_roman (char *input1, char *input2, char *output)
 {
 	int2roman (roman2int(input1) - roman2int(input2), output);
-  return 0;
+	return 0;
 }
 
 
@@ -50,11 +50,11 @@ int int2roman (int input, char *output)
 int roman2int (char *input)
 {
 	int i          = 0;
-  int output     = 0;
+	int output     = 0;
 	int value      = 0;
 	int last_value = 10000;
 
-  while ((i<MAX_STRING)&&(input[i] != '\0'))
+	while ((i<MAX_STRING)&&(input[i] != '\0'))
 	{
 		switch (input[i])
 		{
@@ -65,15 +65,15 @@ int roman2int (char *input)
 			case 'X': value = 10;   break;
 			case 'V': value = 5;    break;
 			case 'I': value = 1;    break;
-		  default: return -1;     break;
+			default: return -1;     break;
 		}
 		output += value;
 		if (value > last_value)
 		{
-		  output -= 2 * last_value;
+			output -= 2 * last_value;
 		}
 		i++;
 		last_value = value;
-  }
-  return output;
+	}
+	return output;
 }
