@@ -5,6 +5,14 @@ char buffer[256];
 
 # test sub_roman_Test
 	ck_assert_str_eq ((sub_roman ("III", "I", buffer),  buffer), "II");
+	ck_assert_str_eq ((sub_roman ("III", "II", buffer),  buffer), "I");
+	ck_assert_str_eq ((sub_roman ("L", "X", buffer),  buffer), "XL");
+	ck_assert_str_eq ((sub_roman ("C", "X", buffer),  buffer), "XC");
+	ck_assert_str_eq ((sub_roman ("D", "C", buffer),  buffer), "CD");
+	ck_assert_str_eq ((sub_roman ("M", "C", buffer),  buffer), "CM");
+	ck_assert_str_eq ((sub_roman ("MMI", "II", buffer),  buffer), "MCMXCIX");
+	ck_assert_str_eq ((sub_roman ("I", "II", buffer),  buffer), "");
+
 
 # test add_roman_test
 	ck_assert_str_eq ((add_roman ("I", "I", buffer),  buffer), "II");
